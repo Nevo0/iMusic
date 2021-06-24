@@ -82,3 +82,7 @@ export const fetchInfo = (wrapperType, id) => async (dispatch, getState) => {
     });
   }
 };
+export const addItemToCard = (item) => async (dispatch, getState) => {
+  console.log(item);
+  dispatch({ type: ActionTypes.ADD_ITEM_TO_CARD, payload: item });
+}

@@ -15,8 +15,7 @@ function SearchForm() {
     <div className="searchBarWrapper">
       <div className="card">
       Card
-      </div>
-      
+      </div>      
     </div>
   );
 }

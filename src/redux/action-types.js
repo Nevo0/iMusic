@@ -8,4 +8,5 @@ export const ActionTypes = {
     SET_INPUT_MEDIA: "SET_INPUT_MEDIA",    
     SET_INPUT_TEXT: "SET_INPUT_TEXT",    
     CLOSE_MODAL: "CLOSE_MODAL",    
+    ADD_ITEM_TO_CARD: "ADD_ITEM_TO_CARD",    
   };

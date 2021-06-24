@@ -8,7 +8,6 @@ function SearchResult() {
     const hendleOnClick=(id,wrapperType,e)=>{
       e.preventDefault();
       dispatch(fetchInfo(wrapperType,id));
-
   }
   const renderItem =(wrapperType, imgurl,name, id,primaryGenreName ,releaseDate=null,artistName=null,collectionName=null) =>{
     const yr=null

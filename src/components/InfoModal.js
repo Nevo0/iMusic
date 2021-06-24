@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchInfo } from "../redux/actions/tunesActions";
+import { fetchInfo ,addItemToCard} from "../redux/actions/tunesActions";
 
 function InfoModal() {
   const {
@@ -13,10 +13,7 @@ function InfoModal() {
   const handleCloseModal = () => {
     dispatch({ type: "CLOSE_MODAL" });
   };
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-  };
-
+ 
   const hendleOnClick = (id, wrapperType, e) => {
     e.preventDefault();
     dispatch(fetchInfo(wrapperType, id));
@@ -77,9 +74,10 @@ function InfoModal() {
 
     return collections.map((el) => {
       const id = el.trackId || el.collectionId;
+      console.log(el);
 
       return (
-        <div className="collection-column">
+        <div className="collection-column" key={id}>
           <div className="collection-cards">
             <div className="collection-card">
               <h5 onClick={(e) => hendleOnClick(id, el.wrapperType, e)}>
@@ -141,7 +139,7 @@ function InfoModal() {
               {firsr.wrapperType == "artist" ? (
                 ""
               ) : (
-                <button type="button" className="btn btn-primary">
+                <button type="button" className="btn btn-primary" onClick={() => dispatch(addItemToCard(firsr))}>
                   Add to card {firsr.wrapperType}
                 </button>
               )}
@@ -154,3 +152,4 @@ function InfoModal() {
 }
 
 export default InfoModal;
+// addItemToCard
