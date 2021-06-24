@@ -18,7 +18,7 @@ export const fetchSearch = () => async (dispatch, getState) => {
 
       dispatch({ type: ActionTypes.FETCH_DATA_SUCCESS, payload: json });
     } catch (error) {
-      dispatch({ type: ActionTypes.FETCH_DATA_FAILURE, error });
+      dispatch({ type: ActionTypes.FETCH_DATA_FAILURE, error: "RefernceError: Not enough data"});
     }
   } else {
     dispatch({

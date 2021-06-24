@@ -2,42 +2,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchInfo } from "../redux/actions/tunesActions";
 
 function CardModal() {
-  const {    
-    isCardOpenModal,
-    cardData
-  } = useSelector((state) => state.tunes);
+  const { isCardOpenModal, cardData } = useSelector((state) => state.tunes);
   const dispatch = useDispatch();
   const handleCloseModal = () => {
     dispatch({ type: "CLOSE_MODAL" });
   };
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const hendleOnClick = (id, wrapperType, e) => {
-    e.preventDefault();
-    dispatch(fetchInfo(wrapperType, id));
-  };
-
   const getBody = () => {
-    
-
     return (
       <div className="modalCard">
-        body
+        {cardData.map((item) => {
+          // const name = item.name
+          return <div>xxx</div>;
+        })}
       </div>
     );
   };
-
-
 
   return (
     <div className="info_modal">
       {/* Button trigger modal  */}
 
-      {/*  Modal  */}
-
-      {/* {isCardOpenModal?"modal fade show":"modal fade"} */}
       <div
         className={isCardOpenModal ? "modal fade show" : "modal fade"}
         id="exampleModalLong"
@@ -51,7 +35,6 @@ function CardModal() {
           <div className="modal-content">
             <div className="modal-header">
               Card
-
               <button
                 type="button"
                 className="close"
@@ -63,9 +46,7 @@ function CardModal() {
               </button>
             </div>
             <div className="modal-body">
-              <div>
-                {/* {firsr.wrapperType == "collection" ? "Tack List" : "Albums"} */}
-              </div>
+              <div></div>
               {getBody()}
             </div>
             <div className="modal-footer">
@@ -77,13 +58,6 @@ function CardModal() {
               >
                 Close
               </button>
-              {/* {firsr.wrapperType == "artist" ? (
-                ""
-              ) : (
-                <button type="button" className="btn btn-primary">
-                  Add to card {firsr.wrapperType}
-                </button>
-              )} */}
             </div>
           </div>
         </div>
