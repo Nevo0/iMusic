@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch, setSearchInfo } from "../redux/actions/tunesActions";
 
 function SearchForm() {
-  const {searchText,searchMedia} = useSelector((state) => state.tunes);
+  const { searchText, searchMedia } = useSelector((state) => state.tunes);
   const dispatch = useDispatch();
   const handleOnSubmit = (e) => {
     e.preventDefault();

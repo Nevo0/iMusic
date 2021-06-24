@@ -1,3 +1,6 @@
+body{
+  background-color: #22274e;
+}
 .App-header {
   background-color: #081c30;
   display: flex;
@@ -7,8 +10,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-h2{
+h2 {
   margin: 5px 0;
+}
+.h5, h5 {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 .App {
@@ -17,17 +24,18 @@ h2{
 .searchBarWrapper {
   position: relative;
   padding: 0 15px;
-  transition: color 0.25s ease-in-out 0s;    
-    display: block;   
-    top: 0px;
-    left: 0px;   
-    color: rgb(10, 38, 67);
-    border: 5px solid currentcolor;
-    border-radius: 5px;
-    background-color: currentcolor;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  transition: color 0.25s ease-in-out 0s;
+  display: block;
+  top: 0px;
+  left: 0px;
+  color: rgb(10, 38, 67);
+  border: 5px solid currentcolor;
+  border-radius: 5px;
+  background-color: currentcolor;
 }
-form.searchForm{
-  
+form.searchForm {
   padding: 0;
   display: flex;
   flex-direction: row-reverse;
@@ -40,14 +48,13 @@ form.searchForm{
   position: relative;
   overflow: visible;
   background: none;
-  color:aliceblue;    
+  color: aliceblue;
   margin: 0px;
   border: 0px;
   padding: 0px;
-  
 }
 .searchIcon::before {
-  content: '';
+  content: "";
   border: 1px solid transparent;
   display: block;
   width: 100%;
@@ -57,13 +64,13 @@ form.searchForm{
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .searchIcon__searchIconOpen {
   height: 14px;
 }
 .searchIcon__searchIconOpen {
-  display: block;  
+  display: block;
   color: #e6e6e6;
   text-align: center;
   pointer-events: none;
@@ -71,12 +78,11 @@ form.searchForm{
   height: 16px;
 }
 .searchIcon__searchIconOpen svg {
-  display: inline-block;
+  display: block;
   width: auto;
 }
 .searchIcon svg {
   width: 14px;
-  
 }
 .input {
   font-size: 14px;
@@ -85,7 +91,7 @@ form.searchForm{
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   line-height: normal;
-  color: rgb(245,245,245);
+  color: rgb(245, 245, 245);
   width: 100%;
   min-height: 100%;
   text-overflow: ellipsis;
@@ -95,8 +101,8 @@ form.searchForm{
   padding: 12px 5px;
   background-color: initial;
   border: 0px;
-    padding: 0px;
-    display: inline-block;
+  padding: 0px;
+  display: inline-block;
 }
 .searchBar-close {
   display: inline-block;
@@ -115,64 +121,57 @@ form.searchForm{
   transition-duration: 0s;
 }
 :focus-visible {
-  outline: none
+  outline: none;
 }
 
-
 .form-select {
-  background-color: rgb(12, 59, 106);;
+  background-color: rgb(12, 59, 106);
   color: white;
   padding: 12px;
   width: 250px;
   border: none;
   font-size: 20px;
- 
- 
 }
 
-@media screen   and (max-width: 720px){
-  
+@media screen and (max-width: 720px) {
   .App-header {
-   
     flex-direction: column;
-   
-}
+  }
 }
 
-#main.main{
+#main.main {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
- 
 }
-
 
 .resultBarWrapper {
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
-}
-.content-info{
- width: 256px;
-  min-height: 180px;
-  position: relative;
-}
-.info_header{
-  margin-top: 5px;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    color:#fff
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
 }
-.resultBarWrapper .card{
+.content-info {
+  width: 255px;
+  min-height: 260px;
+}
+.info_header {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+.resultBarWrapper .card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 1rem 5px;
+  margin: 1rem 4px;
   min-height: 201px;
   background-color: #373d6c;
   border-radius: 10px;
   padding-bottom: 30px;
+  position: relative;
 }
 .resultBarWrapper .image {
   display: flex;
@@ -184,15 +183,13 @@ form.searchForm{
 .resultBarWrapper .image img {
   border-radius: 50%;
 }
-.cards{
-  
+.cards {
 }
-.content-info .btn{
+.content-info .btn {
   position: absolute;
   bottom: -18px;
   right: 14px;
-  }
-
+}
 
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
@@ -212,20 +209,45 @@ form.searchForm{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid transparent;  
+  border: 1px solid transparent;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.info_type{
+.info_type {
   font-size: 14px;
-    color: #ababab;
-    text-transform: capitalize;
+  color: #ababab;
+  text-transform: capitalize;
 }
-.info_header>div{
+.info_header > div {
   margin-top: 5px;
 }
-.loading{
+.info_name {
+  text-align: center;
+}
+.loading {
   color: #fff;
+}
+.modal-header {
+  padding: 5px 10px;
+}
+.modal-body {
+  
+  padding: 5px;
+}
+
+.priceCard {
+  position: absolute;
+  top: 13px;
+  right: 54px;
+  display: flex;
+}
+.priceText {
+  margin-right: 10px;
+}
+.modal-body {  
+  overflow-y: auto;
+  max-height: 69vh;
 }
