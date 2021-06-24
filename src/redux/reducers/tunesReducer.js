@@ -2,7 +2,7 @@ import { ActionTypes } from "../action-types";
 const initState = {
   data: null,
   singleData: null,
-  cardData: {},
+  cardData: [],
   loading: false,
   isOpenModal: false,
   isCardOpenModal: false,
@@ -69,7 +69,8 @@ export const itunesReducer = (state = initState, action) => {
       case ActionTypes.ADD_ITEM_TO_CARD:
       return {
         ...state,
-        cardData: {...state.cardData,...action.payload},        
+        cardData: [...state.cardData, action.payload],        
+        // cardData:{ ...state.cardData, ...action.payload},        
       };
 
     default:

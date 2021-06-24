@@ -39,8 +39,7 @@ export const setSearchInfo =
 
 export const fetchInfo = (wrapperType, id) => async (dispatch, getState) => {
   dispatch({ type: ActionTypes.FETCH_ID_REQUSET });
-  const test = false;
-
+  
   let entri = "";
   let url = `https://itunes.apple.com/lookup?id=${id}`;
   if ((wrapperType, id)) {
@@ -48,21 +47,15 @@ export const fetchInfo = (wrapperType, id) => async (dispatch, getState) => {
       if (wrapperType == "collection") {
         entri = "&entity=song";
         url = url + entri;
-        if (test) {
-          url = "http://localhost:3004/collection";
-        }
+        
       } else if (wrapperType == "track") {
         entri = "&entity=album";
         url = url + entri;
-        if (test) {
-          url = "http://localhost:3004/track";
-        }
+        
       } else if (wrapperType == "artist") {
         entri = "&entity=album";
         url = url + entri;
-        if (test) {
-          url = "http://localhost:3004/artist";
-        }
+       
       } else {
         entri = "";
         url = url + entri;
@@ -83,6 +76,12 @@ export const fetchInfo = (wrapperType, id) => async (dispatch, getState) => {
   }
 };
 export const addItemToCard = (item) => async (dispatch, getState) => {
-  console.log(item);
+  const {
+    tunes: { cardData },   
+  } = getState();
+  console.log(cardData);
+  let index = cardData.findIndex(rank => rank.collectionId === item.collectionId|| rank.trackId === item.trackId);
+  console.log(index);
+ 
   dispatch({ type: ActionTypes.ADD_ITEM_TO_CARD, payload: item });
 }
