@@ -1,17 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
-
-import './App.css';
+import { useSelector } from "react-redux";
+import "./App.css";
+import Header from "./components/Header";
+import SearchResult from "./components/SearchResult";
 
 function App() {
-  const data = useSelector((state) => state.tunes.data);
+  const { data, error } = useSelector((state) => state.tunes);
   return (
     <div className="App">
-      <header className="App-header">
-       
-          <h1>Learn React</h1>
-          {data.length}
-        
-      </header>
+      <Header />
+      {error && <h1>{error}</h1>}
+      <main id="main" className="main">       
+      {data &&<SearchResult />}
+      </main>
+
     </div>
   );
 }
