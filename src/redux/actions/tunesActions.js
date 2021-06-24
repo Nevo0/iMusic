@@ -82,6 +82,9 @@ export const addItemToCard = (item) => async (dispatch, getState) => {
   console.log(cardData);
   let index = cardData.findIndex(rank => rank.collectionId === item.collectionId|| rank.trackId === item.trackId);
   console.log(index);
+  if(index=== -1){
+
+    dispatch({ type: ActionTypes.ADD_ITEM_TO_CARD, payload: item });
+  }
  
-  dispatch({ type: ActionTypes.ADD_ITEM_TO_CARD, payload: item });
 }
