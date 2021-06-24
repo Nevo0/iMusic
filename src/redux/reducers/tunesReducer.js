@@ -72,6 +72,11 @@ export const itunesReducer = (state = initState, action) => {
         cardData: [...state.cardData, action.payload],        
         // cardData:{ ...state.cardData, ...action.payload},        
       };
+      case ActionTypes.OPEN_CARD_MODAL:
+        return {
+          ...state,
+          isCardOpenModal: true,         
+        };
 
     default:
       return state;

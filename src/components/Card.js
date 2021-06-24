@@ -6,13 +6,13 @@ function SearchForm() {
   const dispatch = useDispatch();
   const handleOnClick = (e) => {
     e.preventDefault();
-    if (!(searchText.length === 0)) {
+    
       dispatch(fetchSearch());
-    }
+    
   };
 
   return (
-    <div className="searchBarWrapper">
+    <div className="searchBarWrapper"  onClick={()=> dispatch({type:"OPEN_CARD_MODAL"})}>
       <div className="card">
       Card
       </div>      

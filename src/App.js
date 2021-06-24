@@ -3,9 +3,10 @@ import "./App.css";
 import Header from "./components/Header";
 import InfoModal from "./components/InfoModal";
 import SearchResult from "./components/SearchResult";
+import CardModal from "./components/CardModal";
 
 function App() {
-  const { data, error, isOpenModal } = useSelector((state) => state.tunes);
+  const { data, error, isOpenModal, isCardOpenModal } = useSelector((state) => state.tunes);
   return (
     <div className="App">
       <Header />
@@ -13,6 +14,7 @@ function App() {
       <main id="main" className="main">
         {data && <SearchResult />}
         {isOpenModal && <InfoModal />}
+        {isCardOpenModal && <CardModal />}
       </main>
       
     </div>
